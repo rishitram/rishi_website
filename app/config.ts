@@ -23,13 +23,13 @@
 // The single source of truth for anything identifying you. Every other
 // section below derives from these fields instead of repeating them.
 export const ME = {
-  firstName:  'Your',
-  lastName:   'Name',
-  role:       'Software Engineer', // e.g. "Software Engineer", "Data Scientist"
-  email:      'you@example.com',
-  github:     'yourusername',      // GitHub username only, no URL
-  linkedin:   'yourusername',      // LinkedIn username only, no URL
-  resumePath: '/resume.pdf',       // path under public/ — see README.md
+  firstName:  'Rishi',
+  lastName:   'Ramachandran',
+  role:       'Computer Science Student',
+  email:      'rishi1ramachandran@gmail.com',
+  github:     'rishitram',
+  linkedin:   'rishi-ramachandran-b0989736a',
+  resumePath: '/resume.pdf',
 };
 
 // Derived URLs, built once from ME so nothing else hardcodes them.
@@ -65,7 +65,7 @@ export const SITE = {
   url:         SITE_URL,
   title:       `${PERSON.fullName} — ${PERSON.role}`,
   titleSuffix: `| ${PERSON.fullName}`,
-  description: `Personal portfolio of ${PERSON.fullName}, a ${PERSON.role} at UCLA.`,
+  description: `Personal portfolio of ${PERSON.fullName}, a UCLA computer science student building AI, web apps, and security-focused tools.`,
 };
 
 // ── Navigation links ──────────────────────────────────────────────────
@@ -82,11 +82,11 @@ export const NAV_LINKS = [
 // The big intro at the top of the page. `ctas` are the call-to-action
 // buttons — set `primary: true` for the filled/highlighted button.
 export const HERO = {
-  greeting: "Hi, I'm",
-  bio:      "I'm a computer science student at UCLA passionate about building software that solves real problems. I love working across the stack, from crafting clean UIs to designing scalable back-ends.",
+  greeting: "Hey, I'm",
+  bio:      "I’m a UCLA CS student who likes building products, experimenting with AI, and making tech that actually feels useful. I spend time in full-stack dev, model evals, and security-minded tooling, and I’m always trying to ship the next thing that’s a little more fun and a little more useful.",
   ctas: [
     { label: 'View my projects →', href: '#projects', primary: true  },
-    { label: 'Get in touch',       href: '#contact',  primary: false },
+    { label: 'Let’s talk',         href: '#contact',  primary: false },
   ],
 };
 
@@ -106,16 +106,12 @@ export const EDUCATION: EducationEntry[] = [
   {
     school:     'University of California, Los Angeles',
     degree:     'B.S. Computer Science',
-    minor:      'Statistics',
-    gpa:        '3.82',
-    graduation: 'June 2026',
+    graduation: 'Graduation: May 2029',
     courses: [
-      'Data Structures & Algorithms',
-      'Operating Systems',
-      'Computer Networks',
-      'Machine Learning',
-      'Probability & Statistics',
-      'Software Engineering',
+      'Calculus of Several Variables',
+      'Computer Science 31',
+      'Ethical Hacking',
+
     ],
   },
 ];
@@ -136,30 +132,58 @@ export interface ExperienceEntry {
 
 export const EXPERIENCE: ExperienceEntry[] = [
   {
-    company:  'Acme Corporation',
+    company:  'Ember Learning',
     role:     'Software Engineer Intern',
-    location: 'San Francisco, CA',
-    start:    'Jun 2025',
-    end:      'Aug 2025',
+    location: 'Raleigh, NC',
+    start:    'Feb 2025',
+    end:      'Mar 2026',
     bullets: [
-      'Built a real-time dashboard in React and TypeScript, reducing incident response time by 40%.',
-      'Designed and deployed three REST API endpoints serving 50k requests per day.',
-      'Collaborated with the design team to ship a redesigned onboarding flow that improved conversion by 18%.',
+      'Improved AI essay grading accuracy by 50% by refining prompts and grading logic for GPT-4.',
+      'Built Reading Comprehension Workshops with AI-generated passages and questions, storing student data with Prisma and PostgreSQL for 200k+ users.',
+      'Designed a TypeScript and Next.js onboarding flow with a product tour, increasing weekly sign-ups by 10%.',
+      'Implemented 15+ AP History and English rubric templates to speed up teacher grading workflows.',
+      'Used REST APIs and Mailjet to create welcome email automation for new users and newsletters.',
     ],
-    tech: ['React', 'TypeScript', 'Python', 'PostgreSQL', 'AWS'],
+    tech: ['TypeScript', 'Next.js', 'PostgreSQL', 'Prisma', 'REST APIs', 'AI', 'Mailjet'],
   },
   {
-    company:  'UCLA Engineering',
-    role:     'Teaching Assistant — CS 33',
-    location: 'Los Angeles, CA',
-    start:    'Sep 2024',
-    end:      'Dec 2024',
+    company:  'UChicago CS Researchers',
+    role:     'AI Researcher',
+    location: 'Chicago, IL',
+    start:    'Jun 2025',
+    end:      'Nov 2025',
     bullets: [
-      'Led weekly discussion sections for 40 students covering systems programming in C.',
-      'Held office hours to assist students with debugging and conceptual questions.',
-      'Wrote and graded three programming assignments and two midterms.',
+      'Analyzed large language model reliability, studying answer-switching across GPT, Gemini, and Claude models.',
+      'Evaluated LLM performance across 3,000+ benchmark questions under repetitive multi-turn prompting, observing up to 15% accuracy degradation across frontier models.',
+      'Developed a novel Markov-chain-based metric called Stationary Accuracy to quantify long-term model stability.',
+      'Trained linear probes on transformer hidden states to predict whether models would change their answers over time.',
     ],
-    tech: ['C', 'x86 Assembly', 'Linux'],
+    tech: ['Python', 'LLMs', 'Evaluation', 'pandas', 'NumPy', 'Pytest', 'ML'],
+  },
+  {
+    company:  'Build-a-thon',
+    role:     'Hackathon Co-Founder and Organizer',
+    location: 'Remote / National',
+    start:    'Sep 2025',
+    end:      'Nov 2025',
+    bullets: [
+      'Co-led a hackathon attended by 250+ students, securing $19.5k in sponsorships and judges from Google and Tesla.',
+      'Taught workshops on API keys, web development, and AI integration into hackathon projects and led the opening ceremony.',
+    ],
+    tech: ['Event Ops', 'AI', 'Web Dev', 'APIs', 'Leadership'],
+  },
+  {
+    company:  'picoCTF',
+    role:     'Cybersecurity Competitor',
+    location: 'National / Global',
+    start:    'Sep 2025',
+    end:      'Oct 2025',
+    bullets: [
+      'Ranked Top 50 globally among 10,460+ teams and Top 12 nationally among 1,817 U.S. high school teams.',
+      'Filtered HTTP, FTP, and DNS traffic in Wireshark and followed TCP streams to extract credentials and flags.',
+      'Cracked Base64, XOR, Caesar, and RSA-encrypted challenges using CyberChef and Python.',
+    ],
+    tech: ['Python', 'Wireshark', 'Linux', 'Cybersecurity', 'Cryptography'],
   },
 ];
 
@@ -179,34 +203,18 @@ export interface ProjectEntry {
 
 export const PROJECTS: ProjectEntry[] = [
   {
-    name:        'StudySync',
-    description: 'A collaborative study-planning app that lets UCLA students share notes, schedule group sessions, and track progress together in real time.',
-    tech:        ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS'],
-    github:      `${GITHUB_URL}/studysync`,
-    live:        'https://studysync.app',
+    name:        'Voice Agent Evaluation Skill',
+    description: 'A reusable Python evaluation skill for grading multi-turn voice-agent calls across six performance dimensions, from factual accuracy to tone and pacing.',
+    tech:        ['Python', 'Ollama', 'LLMs', 'Evaluation', 'OpenClaw'],
+    github:      'https://github.com/rishitram/AI_VoiceEval_Skill',
     featured:    true,
   },
   {
-    name:        'BruinBot',
-    description: 'A Discord bot that surfaces real-time UCLA dining menu data, library room availability, and bus schedules for 2,000+ active users.',
-    tech:        ['Node.js', 'Discord.js', 'REST APIs', 'Cron'],
-    github:      `${GITHUB_URL}/bruinbot`,
+    name:        'Home Wildfire Risk App',
+    description: 'A Java scoring engine that checks home risk factors like roofing, vegetation, and hazard data to generate a wildfire risk score for property buyers and sellers.',
+    tech:        ['Java', 'CSV Parsing', 'Data Modeling', 'Risk Scoring'],
+    github:      'https://github.com/rishitram/Widlfire-Risk-Application',
     featured:    true,
-  },
-  {
-    name:        'PocketPortfolio',
-    description: 'A mobile-first stock portfolio tracker with custom alerts and a clean chart-based UI, built during a 24-hour hackathon.',
-    tech:        ['React Native', 'Expo', 'Recharts', 'Firebase'],
-    github:      `${GITHUB_URL}/pocketportfolio`,
-    live:        'https://pocketportfolio.dev',
-    featured:    false,
-  },
-  {
-    name:        'AutoGrade',
-    description: 'A command-line grading tool that runs student Python submissions against test suites in isolated Docker containers and produces structured reports.',
-    tech:        ['Python', 'Docker', 'Bash', 'SQLite'],
-    github:      `${GITHUB_URL}/autograde`,
-    featured:    false,
   },
 ];
 
@@ -224,7 +232,7 @@ export const SOCIAL_LINKS = [
 // Resume". If you don't want to show a resume link, delete that entry.
 export const CONTACT = {
   email: ME.email,
-  blurb: "I'm actively looking for internships and new-grad roles starting 2026. If you're working on something interesting or just want to chat, my inbox is always open.",
+  blurb: "I’m open to product, AI, and software engineering opportunities, especially the kind where I can learn fast and build things that matter. If you’ve got a project, a research idea, or just want to swap notes, hit me up.",
   links: [
     { label: 'Email',    href: EMAIL_HREF,     display: ME.email                         },
     { label: 'GitHub',   href: GITHUB_URL,     display: `github.com/${ME.github}`        },
@@ -237,7 +245,7 @@ export const CONTACT = {
 // `columns` renders as link groups. The Resume link here reuses
 // ME.resumePath, so it stays in sync with CONTACT automatically.
 export const FOOTER = {
-  tagline: "UCLA Computer Science student building things for the web.",
+  tagline: "UCLA CS student building things with code, AI, and a little bit of chaos.",
   columns: [
     {
       heading: 'Portfolio',

@@ -41,7 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      data-theme="light"
+      data-theme="dark"
       className={`${dmSans.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
@@ -49,7 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Prevents flash of wrong theme on page load */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('jwc-theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',t||(d?'dark':'light'));}catch(e){}})();`,
+            __html: `(function(){try{var t=localStorage.getItem('jwc-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){}})();`,
           }}
         />
       </head>

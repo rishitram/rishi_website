@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { PERSON, HERO } from '@/app/config';
+import Image from 'next/image';
 
 /* Colored squares that arc across the hero (blue → purple → pink)
    Each square: left/top as % of hero, size in px, rotation in deg,
@@ -62,35 +62,32 @@ export function HeroSection() {
         <div className="hero-text">
           <h1 className="hero-heading">
             {HERO.greeting}{' '}
-            <span style={{ color: 'var(--primary)' }}>{PERSON.fullName}</span>
+            <span style={{ color: 'var(--primary)' }}>{PERSON.firstName}</span>
           </h1>
           <p className="hero-sub">{HERO.bio}</p>
           <div className="hero-ctas">
             {HERO.ctas.map((cta) => (
-              <Link
+              <a
                 key={cta.href}
                 href={cta.href}
                 className={cta.primary ? 'btn-primary' : 'btn-secondary'}
               >
                 {cta.label}
-              </Link>
+              </a>
             ))}
           </div>
         </div>
 
         {/* Right: character illustration */}
-        <div className="hero-character" aria-hidden="true">
-          {/*
-            TODO: Replace this placeholder with your own photo or illustration:
-            <img src="/images/your-photo.png" alt="" className="character-img" />
-
-            Or remove the hero-text and go fully visual like the original.
-          */}
+        <div className="hero-character">
           <div className="character-figure">
-            <div className="character-placeholder">
-              <span role="img" aria-hidden="true">🧑‍💻</span>
-              <small>Your photo here</small>
-            </div>
+            <Image
+              src="/rishi-profile.png"
+              alt={`Photo of ${PERSON.fullName}`}
+              width={600}
+              height={646}
+              className="character-img"
+            />
           </div>
         </div>
       </div>

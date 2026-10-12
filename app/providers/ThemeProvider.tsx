@@ -20,7 +20,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const stored = localStorage.getItem('jwc-theme') as Theme | null;
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const resolved: Theme = stored ?? (prefersDark ? 'dark' : 'light');
+    const resolved: Theme = stored ?? 'dark';
     setTheme(resolved);
     document.documentElement.setAttribute('data-theme', resolved);
 
